@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            position: relative;
+            
+        }
+        ul.nav-pills {
+            top: 20px;
+            position: fixed;
+     
+        }
+        div.col-sm-9 div {
+            height: 250px;
+            font-size: 28px;
+
+        }
+        #section1 {padding-top:50px;height:600px;color: #fff; background-color: #B6DEFF; background-image: url('assets/seacloud.png');}
+        #section2 {padding-top:50px;height:600px;color: #2E2E2E; background-color: rgba(255, 247, 133, 0.5);}
+        #section3 {padding-top:50px;height:600px;color: #fff; background-color: #93C2FF;}
+        
+        @media screen and (max-width: 810px) {
+          #section1, #section2, #section3  {
+              margin-left: 0px;
+          }
+        }
+     </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="#" style="color: #FFFFFF;">MY WEB</a>
+        </div>
+        <div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="#section1" style="color: #FFFFFF;">Home</a></li>
+              <li><a href="#section2" style="color: #FFFFFF;">Gallery</a></li>
+              <li><a href="#section3" style="color: #FFFFFF;">Contact</a></li>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>    
+    
+    <div id="section1" class="container-fluid">
+            <div class="jumbotron" style="margin-top: 150px; margin-left: 150px; margin-right: 150px; background-color:rgba(255, 255, 255, 0.5);">
+                    <h1 class="text-center" style="color:#B9B9B9; font-family: Cooper;">Welcome!</h1> 
+                  </div>
+      <h1 class="text-center"></h1>
+ 
+    </div>
+    <div id="section2" class="container-fluid">
+      <h1 class="text-center" style="font-family: Cooper;">Gallery</h1>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-md-2 col-xs-2 center" style="margin-left: 150px;"><p class="text-center">Update Your Picture Here!</p></div>
+        <div class="col-md-2 col-xs-2 center" style="margin-left: 150px;"><p class="text-center">Gallery</p></div>
+      </div>
+    </div>
+    <div id="section3" class="container-fluid">
+      <h1 class="text-center" style="font-family: Cooper;">Contact</h1>
+      
+
+    </div>
+    
+
+    <script>
+        $(document).ready(function(){
+          // Add scrollspy to <body>
+          $('body').scrollspy({target: ".navbar", offset: 50});   
+        
+          // Add smooth scrolling on all links inside the navbar
+          $("#myNavbar a").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+        
+              // Store hash
+              var hash = this.hash;
+        
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+           
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            }  // End if
+          });
+        });
+        </script>
+</body>
+</html>
